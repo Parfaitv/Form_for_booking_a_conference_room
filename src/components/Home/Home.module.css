@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e1538;
+    min-height: 100vh;
+    color: white;
+}
+
+
+.formData{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: #0e1538;
+}
+
+.formData::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(90deg, #194ec2, #0e1538, #0e1538, #1ac5eb);
+    box-shadow: 0 0 0 10px #070c23;
+    z-index: -1;
+}
+
+.formData::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(45deg, #194ec2, #0e1538, #0e1538, #1ac5eb);
+    z-index: -1;
+    filter: blur(10px);
+}
