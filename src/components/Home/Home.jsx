@@ -1,9 +1,9 @@
 import Select from '../Select/Select'
 import FormButton from '../FormButton/FormButton';
-import InputData from '../InputData/InputData';
+import InputDate from '../InputDate/InputDate';
 import TextArea from '../TextArea/TextArea';
 import InputTime from '../InputTime/InputTime';
-import styles from './Home.module.css'
+import styles from '../../styleForComponents/components.module.css'
 import React, { useState } from "react";
 const towers = ["А", "Б"];
 const floors = Array.from({ length: 25 }, (_, i) => i + 3);
@@ -14,7 +14,7 @@ export const BookingForm = () => {
   const [formData, setFormData] = useState({
     tower: "",
     floor: "",
-    meetingRoom: "",
+    room: "",
     date: "",
     startTime: "",
     endTime:"",
@@ -35,7 +35,7 @@ export const BookingForm = () => {
     setFormData({
       tower: "",
       floor: "",
-      meetingRoom: "",
+      room: "",
       date: "",
       startTime: "",
       endTime:"",
@@ -47,7 +47,7 @@ export const BookingForm = () => {
     setFormData({
       tower: "",
       floor: "",
-      meetingRoom: "",
+      room: "",
       date: "",
       startTime: "",
       endTime:"",
@@ -59,9 +59,9 @@ export const BookingForm = () => {
     <form className={styles.formData} onSubmit={handleSubmit}>
       <Select label="Башня" name="tower" value={formData.tower} options={towers} onChange={handleChange} />
       <Select label="Этаж" name="floor" value={formData.floor} options={floors} onChange={handleChange} />
-      <Select label="Переговорка" name="meetingRoom" value={formData.meetingRoom} options={meetingRooms} onChange={handleChange} />
-      <InputData label="Дата" name="date" value={formData.date} onChange={handleChange} type="date" />
-      <InputTime label="Начало с" name="startTime" value={formData.startTime} onChange={handleChange} />
+      <Select label="Переговорка" name="room" value={formData.room} options={meetingRooms} onChange={handleChange} />
+      <InputDate label="Дата" name="date" value={formData.date} onChange={handleChange} type="date" />
+      <InputTime label="Время с" name="startTime" value={formData.startTime} onChange={handleChange} />
       <InputTime label="До" name="endTime" value={formData.endTime} onChange={handleChange} />
       <TextArea label="Комментарий" name="comment" value={formData.comment} onChange={handleChange} />
       <FormButton label="Submit" type="submit" />
